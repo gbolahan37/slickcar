@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block header %} {% include 'header.html' %}{% endblock header %}
+{% block banner %} {% include 'banner.html' %}{% endblock banner %}
+{% block content %} 
+    <!-- content section  -->
+    <div class="card mb-3 container mt-5 detail" style="max-width: 700px;">
+      <div class="row g-0">
+        <div class="col-md-6 det">
+          <img src="{{cardet.picture.url}}" class="img-fluid rounded-start" alt="...">
+          <ul>
+              <li><i class="bi bi-fuel-pump-diesel"></i></li>
+              <li><i class="bi bi-car-front-fill"></i></li>
+              <li><i class="bi bi-speedometer"></i></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h3 class="card-title text-center pb-3 text-warning">{{cardet.name}}</h3>
+            <p class="card-text"><span>model:</span> {{cardet.model}}</p>
+            <p class="card-text"><span>year:</span> {{cardet.year}}</p>
+            <p class="card-text"><span>color: </span> {{cardet.color|title}}</p>
+            <p class="card-text"><span>seats:</span> {{cardet.seats}}</p>
+            <p class="card-text"><span>registered:</span> {{cardet.registered|title}}</p>
+          </div>
+          <div class="text-center but">
+              <p>N{{cardet.price}}</p>
+              <button type="submit" class="btn btn-warning">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content section done  -->
+{% endblock content %}
+ {% block footer %}{% include 'footer.html' %} {% endblock footer %}
