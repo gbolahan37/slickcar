@@ -2,11 +2,6 @@ import uuid
 import json
 import requests
 
-from distutils.log import info
-from multiprocessing import context
-from unicodedata import category
-from urllib import request
-from django.forms import PasswordInput
 from django.http import HttpResponse
 from django.core.paginator import Paginator
 from django.shortcuts import render,redirect
@@ -55,8 +50,8 @@ def category(request, id, slug):
     carbrand = Product.objects.filter(type_id=id)
 
     context = {
-        'info':info,
         'carbrand':carbrand,
+        'categ':categ 
     }
     return render(request, 'category.html', context)
 
